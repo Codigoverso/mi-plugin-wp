@@ -3,14 +3,14 @@
  * Plugin Name: Mi Plugin desde GitHub
  * Description: Plugin de WordPress enlazado a GitHub para actualizaciones automáticas.
  * Version: 1.0.0
- * Author: Tu Nombre
- * GitHub Plugin URI: https://github.com/usuario/repositorio
+ * Author: Codigoverso
+ * GitHub Plugin URI: https://github.com/Codigoverso/mi-plugin-wp
  */
 
 defined('ABSPATH') or die('Acceso denegado.');
 
 class Mi_Plugin_GitHub_Updater {
-    private $github_api_url = 'https://api.github.com/repos/usuario/repositorio/releases/latest';
+    private $github_api_url = 'https://api.github.com/repos/Codigoverso/mi-plugin-wp/releases/latest';
     private $plugin_file = __FILE__;
     private $plugin_slug;
     private $plugin_version;
@@ -52,7 +52,7 @@ class Mi_Plugin_GitHub_Updater {
                 'plugin'      => $this->plugin_slug,
                 'new_version' => $latest_version,
                 'package'     => $release->assets[0]->browser_download_url,
-                'url'         => 'https://github.com/usuario/repositorio',
+                'url'         => 'https://github.com/Codigoverso/mi-plugin-wp',
             ];
         }
 
@@ -79,8 +79,8 @@ class Mi_Plugin_GitHub_Updater {
             'name'         => 'Mi Plugin desde GitHub',
             'slug'         => $this->plugin_slug,
             'version'      => $release->tag_name,
-            'author'       => '<a href="https://github.com/usuario">Tu Nombre</a>',
-            'homepage'     => 'https://github.com/usuario/repositorio',
+            'author'       => '<a href="https://github.com/Codigoverso">Codigoverso</a>',
+            'homepage'     => 'https://github.com/Codigoverso/my-plugin-wp',
             'download_link'=> $release->assets[0]->browser_download_url,
             'sections'     => [
                 'description' => 'Este plugin se actualiza directamente desde GitHub.',
